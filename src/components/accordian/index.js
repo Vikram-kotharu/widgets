@@ -4,7 +4,6 @@ import { useState } from "react"
 const Accordian = (props) =>{
     const {items} = props
     const [active, setActive] = useState(null)
-    const [count,setCount] = useState(0)
     const called = (index) =>{
         console.log('clicked',index)
      

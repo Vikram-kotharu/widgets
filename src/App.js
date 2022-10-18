@@ -1,6 +1,8 @@
 
+import { useState } from "react";
 import Accordian from "./components/accordian";
-
+import SearchBar from "./components/searchbar";
+import DropDown from "./components/DropDown";
 const items = [
   {
     title:"what is react?",
@@ -16,13 +18,29 @@ const items = [
   }
 ]
 
+const options = [
+  {
+    label: "The Color Red",
+    color: "red"
+  },
+  {
+    label: "The Color Green",
+    color: "green"
+  },
+  {
+    label: "The Color Blue",
+    color: "blue"
+  }
+]
 const App = () =>{
+  const [stat,setStat] = useState('yes')
   return(
     <>
-      <div>
-      <Accordian items = {items}/>
-
+    
+      <div className="d-none">
+      {stat==='yes'?<SearchBar/>:<Accordian items = {items}/>}
       </div>
+      <DropDown options={options}/>
       
     </>
   )
